@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="cardBgInul" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </radialGradient>
+    <filter id="inulShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Clean Light Background -->
+  <rect width="800" height="600" fill="url(#cardBgInul)" />
+
+  <!-- Oblong / Lonjong Watermelon Fruit -->
+  <g transform="translate(190, 200)" filter="url(#inulShadow)">
+    <!-- Oblong Body -->
+    <ellipse cx="210" cy="110" rx="210" ry="120" fill="#15803D" stroke="#166534" stroke-width="4" />
+    
+    <!-- Distinctive Dark Stripes -->
+    <path d="M50,105 Q210,50 370,105" stroke="#052E16" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.65"/>
+    <path d="M40,120 Q210,80 380,120" stroke="#052E16" stroke-width="26" stroke-linecap="round" fill="none" opacity="0.65"/>
+    <path d="M50,135 Q210,165 370,135" stroke="#052E16" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.65"/>
+    <path d="M80,85 Q210,35 340,85" stroke="#052E16" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M80,150 Q210,195 340,150" stroke="#052E16" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Stem -->
+    <path d="M420,110 Q440,95 455,115" stroke="#854D0E" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+    <!-- Subtle Shine -->
+    <ellipse cx="170" cy="65" rx="90" ry="25" fill="#4ADE80" opacity="0.35" transform="rotate(-5 170 65)" />
+  </g>
+</svg>

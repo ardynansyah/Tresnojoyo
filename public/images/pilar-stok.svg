@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <!-- Subtle Soft Circle Base -->
+  <circle cx="60" cy="60" r="54" fill="#F8FAFC" />
+
+  <!-- Fast Stock Dispatch Truck -->
+  <g transform="translate(20, 32)">
+    <!-- Truck Box Cargo -->
+    <rect x="0" y="8" width="50" height="32" rx="4" fill="#101820" />
+    <!-- Truck Cabin -->
+    <path d="M 50 20 L 66 20 L 74 30 L 74 40 L 50 40 Z" fill="#00AA13" />
+    <path d="M 53 23 L 64 23 L 69 30 L 53 30 Z" fill="#FFFFFF" opacity="0.85" />
+    <!-- Watermelon cargo icon on truck -->
+    <circle cx="25" cy="24" r="8" fill="#E11D48" />
+
+    <!-- Wheels -->
+    <circle cx="15" cy="42" r="7" fill="#334155" />
+    <circle cx="15" cy="42" r="3" fill="#FFFFFF" />
+    <circle cx="60" cy="42" r="7" fill="#334155" />
+    <circle cx="60" cy="42" r="3" fill="#FFFFFF" />
+  </g>
+</svg>

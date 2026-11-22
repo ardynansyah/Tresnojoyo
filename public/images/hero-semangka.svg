@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="60%" stop-color="#065f46" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <linearGradient id="rindGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14532d" />
+      <stop offset="50%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="fleshGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- Subtle Decorative Grid Lines -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1.5">
+    <line x1="0" y1="135" x2="1200" y2="135" />
+    <line x1="0" y1="270" x2="1200" y2="270" />
+    <line x1="0" y1="405" x2="1200" y2="405" />
+    <line x1="0" y1="540" x2="1200" y2="540" />
+    <line x1="240" y1="0" x2="240" y2="675" />
+    <line x1="480" y1="0" x2="480" y2="675" />
+    <line x1="720" y1="0" x2="720" y2="675" />
+    <line x1="960" y1="0" x2="960" y2="675" />
+  </g>
+
+  <!-- Large Watermelon Illustration (Hero Center-Right) -->
+  <g transform="translate(730, 290)" filter="url(#shadow)">
+    <!-- Whole Watermelon Base -->
+    <ellipse cx="60" cy="100" rx="200" ry="160" fill="url(#rindGrad)" />
+    <!-- Stripes -->
+    <path d="M-80,40 Q-20,100 -80,180" stroke="#052e16" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M0,0 Q60,100 0,220" stroke="#052e16" stroke-width="26" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M90,0 Q160,100 90,210" stroke="#052e16" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M180,30 Q240,110 180,190" stroke="#052e16" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Watermelon Slice in front -->
+    <g transform="translate(-160, 40) rotate(-18)">
+      <!-- Outer Rind -->
+      <path d="M 0 160 A 180 180 0 0 0 320 160 Z" fill="#15803d" />
+      <!-- Inner White Rind -->
+      <path d="M 12 154 A 166 166 0 0 0 308 154 Z" fill="#bbf7d0" />
+      <!-- Red Juicy Flesh -->
+      <path d="M 24 148 A 152 152 0 0 0 296 148 Z" fill="url(#fleshGrad)" />
+      <!-- Seeds -->
+      <ellipse cx="100" cy="180" rx="5" ry="9" fill="#1f2937" transform="rotate(-25 100 180)" />
+      <ellipse cx="160" cy="210" rx="5" ry="9" fill="#1f2937" />
+      <ellipse cx="220" cy="180" rx="5" ry="9" fill="#1f2937" transform="rotate(25 220 180)" />
+      <ellipse cx="130" cy="240" rx="5" ry="9" fill="#1f2937" transform="rotate(-10 130 240)" />
+      <ellipse cx="190" cy="240" rx="5" ry="9" fill="#1f2937" transform="rotate(10 190 240)" />
+    </g>
+  </g>
+
+  <!-- Left Content Info & Typography -->
+  <g transform="translate(100, 150)">
+    <!-- Location Badge -->
+    <rect x="0" y="0" width="380" height="38" rx="19" fill="#10b981" fill-opacity="0.2" stroke="#34d399" stroke-width="1.5" />
+    <circle cx="20" cy="19" r="6" fill="#10b981" />
+    <text x="36" y="24" fill="#a7f3d0" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="1">PASAR INDUK KRAMAT JATI • JAKARTA TIMUR</text>
+
+    <!-- Brand Name -->
+    <text x="0" y="110" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" letter-spacing="-1">TRESNOJOYO</text>
+
+    <!-- Tagline / Wholesale Focus -->
+    <text x="0" y="165" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">GROSIR &amp; AGEN SEMANGKA SEGAR</text>
+
+    <text x="0" y="215" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400">
+      Suplai Langsung Dari Petani • Partai Besar &amp; Eceran Tonase
+    </text>
+    <text x="0" y="245" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="400">
+      Non-Biji Super • Inul Lonjong • Semangka Kuning Berkualitas
+    </text>
+
+    <!-- Placeholder Status Tag -->
+    <g transform="translate(0, 310)">
+      <rect x="0" y="0" width="290" height="44" rx="8" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+      <text x="18" y="27" fill="#94a3b8" font-family="monospace" font-size="13">📸 [ Placeholder Foto Hero 16:9 ]</text>
+    </g>
+  </g>
+</svg>

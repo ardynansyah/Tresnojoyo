@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <!-- Subtle Soft Circle Base -->
+  <circle cx="60" cy="60" r="54" fill="#F0FDF4" />
+  
+  <!-- Direct Farm Tag / Badge -->
+  <g transform="translate(24, 24)">
+    <!-- Watermelon Base -->
+    <ellipse cx="36" cy="42" rx="30" ry="24" fill="#00AA13" />
+    <!-- Stripes -->
+    <path d="M22,26 Q36,42 22,58" stroke="#006A0C" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M36,20 Q44,42 36,64" stroke="#006A0C" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M50,26 Q58,42 50,58" stroke="#006A0C" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Direct Price Badge Tag -->
+    <rect x="28" y="4" width="40" height="24" rx="12" fill="#E11D48" />
+    <text x="48" y="20" fill="#FFFFFF" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" text-anchor="middle">Rp</text>
+  </g>
+</svg>

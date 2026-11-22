@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="cardBgRed" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </radialGradient>
+    <linearGradient id="sliceRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+    <filter id="fruitShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Clean Light Background -->
+  <rect width="800" height="600" fill="url(#cardBgRed)" />
+
+  <!-- Whole Watermelon in Background -->
+  <g transform="translate(430, 260)" filter="url(#fruitShadow)">
+    <ellipse cx="60" cy="50" rx="140" ry="120" fill="#15803D" />
+    <path d="M-40,0 Q10,50 -40,110" stroke="#052E16" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M20,-30 Q80,50 20,130" stroke="#052E16" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M80,-30 Q140,50 80,130" stroke="#052E16" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M140,0 Q190,50 140,110" stroke="#052E16" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Large Crisp Seedless Red Watermelon Slice in Foreground -->
+  <g transform="translate(160, 200)" filter="url(#fruitShadow)">
+    <!-- Outer Dark Rind -->
+    <path d="M 0 190 A 200 200 0 0 0 380 190 Z" fill="#166534" />
+    <!-- Light Green Middle Rind -->
+    <path d="M 12 184 A 186 186 0 0 0 368 184 Z" fill="#22C55E" />
+    <!-- White Inner Rind -->
+    <path d="M 22 178 A 174 174 0 0 0 358 178 Z" fill="#DCFCE7" />
+    <!-- Pure Red Juicy Flesh (Non-Biji / Seedless) -->
+    <path d="M 32 172 A 162 162 0 0 0 348 172 Z" fill="url(#sliceRed)" />
+    <!-- Fresh Juicy Highlight -->
+    <path d="M 80 174 A 130 130 0 0 0 200 250" stroke="#FDA4AF" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.4" />
+  </g>
+</svg>

@@ -1,122 +1,44 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { lapakInfo } from './data/lapakData'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Keunggulan from './components/Keunggulan'
+import Katalog from './components/Katalog'
+import Galeri from './components/Galeri'
+import LokasiKontak from './components/LokasiKontak'
+import Footer from './components/Footer'
+import StickyMobileBar from './components/StickyMobileBar'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-[#F3F8F4] text-neutral-950 font-sans selection:bg-[#E11D48] selection:text-white pb-24 md:pb-0">
+      {/* Wrapper Atas: Latar Foto Semangka Segar dengan Overlay Gradasi Hijau Tua */}
+      <div
+        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
+        style={{ backgroundImage: `url(${lapakInfo.heroImage})` }}
+      >
+        {/* Lapisan overlay gradasi hijau tua semangka */}
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/85 via-emerald-950/75 to-emerald-950/90 pointer-events-none" />
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        {/* Konten Atas: Navbar Transparan & Hero */}
+        <div className="relative z-10 flex flex-col">
+          <Navbar />
+          <Hero />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </div>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* Konten Utama */}
+      <main className="relative">
+        <Keunggulan />
+        <Katalog />
+        <Galeri />
+        <LokasiKontak />
+      </main>
+
+      {/* Footer Minimalis Bersih */}
+      <Footer />
+
+      {/* Sticky Mobile Bar khusus layar HP */}
+      <StickyMobileBar />
+    </div>
   )
 }
-
-export default App

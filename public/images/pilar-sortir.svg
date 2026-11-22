@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <!-- Subtle Soft Circle Base -->
+  <circle cx="60" cy="60" r="54" fill="#FFF1F2" />
+
+  <!-- Ripe Sliced Watermelon -->
+  <g transform="translate(22, 22)">
+    <!-- Green Rind -->
+    <path d="M 6 48 A 38 38 0 0 0 70 48 Z" fill="#00AA13" />
+    <!-- White Inner Rind -->
+    <path d="M 9 47 A 35 35 0 0 0 67 47 Z" fill="#DCFCE7" />
+    <!-- Sweet Red Flesh -->
+    <path d="M 12 46 A 32 32 0 0 0 64 46 Z" fill="#E11D48" />
+
+    <!-- Quality Sweet Star Burst -->
+    <path d="M 38 8 L 41 16 L 49 19 L 41 22 L 38 30 L 35 22 L 27 19 L 35 16 Z" fill="#FBBF24" />
+  </g>
+</svg>
