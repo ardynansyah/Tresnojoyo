@@ -30,13 +30,22 @@ export default function Footer() {
               Navigasi Halaman
             </p>
             <div className="flex items-center gap-6 text-sm font-medium text-neutral-300">
-              <a href="#katalog" className="hover:text-white transition-colors">
+              <a
+                href="#katalog"
+                className="min-h-[44px] inline-flex items-center py-2 hover:text-white transition-colors"
+              >
                 Katalog
               </a>
-              <a href="#galeri" className="hover:text-white transition-colors">
+              <a
+                href="#galeri"
+                className="min-h-[44px] inline-flex items-center py-2 hover:text-white transition-colors"
+              >
                 Galeri
               </a>
-              <a href="#lokasi" className="hover:text-white transition-colors">
+              <a
+                href="#lokasi"
+                className="min-h-[44px] inline-flex items-center py-2 hover:text-white transition-colors"
+              >
                 Lokasi
               </a>
             </div>
@@ -50,7 +59,7 @@ export default function Footer() {
             © {tahunSekarang} {lapakInfo.namaLapak} Grosir Semangka. Hak Cipta Dilindungi.
           </p>
           <p>
-            Pasar Induk Kramat Jati, Jakarta Timur.
+            {lapakInfo.wilayah}.
           </p>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function Katalog() {
           {varianSemangka.map((varian) => (
             <div
               key={varian.id}
-              className="bg-[#F3F8F4] rounded-3xl p-6 flex flex-col justify-between hover:shadow-sm transition-shadow duration-300"
+              className="bg-[#F3F8F4] rounded-3xl p-6 flex flex-col justify-between border border-emerald-950/5 hover:-translate-y-0.5 hover:border-emerald-950/15 hover:shadow-md transition-all duration-200"
             >
               <div>
                 {/* Bingkai Foto Rasio 4:3 Bersih */}
@@ -70,7 +70,7 @@ export default function Katalog() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 w-full rounded-full bg-[#00AA13] hover:bg-[#009210] text-white font-bold py-3.5 text-center transition-colors shadow-sm block"
+                className="mt-6 w-full min-h-[48px] inline-flex items-center justify-center rounded-full bg-[#00AA13] hover:bg-[#009210] text-white font-bold py-3.5 text-center transition-colors shadow-sm"
               >
                 Tanya Stok Varian Ini
               </a>

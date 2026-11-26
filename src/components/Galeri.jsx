@@ -1,22 +1,30 @@
-const fotoGaleri = [
-  {
-    id: 'galeri-1',
-    src: '/images/galeri-1.svg',
-    caption: 'Bongkar muat pasokan tonase semangka segar langsung dari armada truk petani sentra daerah.',
-  },
-  {
-    id: 'galeri-2',
-    src: '/images/galeri-2.svg',
-    caption: 'Sortir kualitas ketat: seleksi kematangan suara ketuk dan penimbangan bobot akurat sebelum muat.',
-  },
-  {
-    id: 'galeri-3',
-    src: '/images/galeri-3.svg',
-    caption: 'Suasana stok melimpah di deretan los buah semangka Pasar Induk Kramat Jati siap angkut.',
-  },
-]
+import { fotoGaleri } from '../data/lapakData'
+
+function GaleriItem({ foto, aspectClass }) {
+  return (
+    <figure className="flex flex-col">
+      {/* Bingkai Foto Bersih Tanpa Overlay Teks */}
+      <div className={`${aspectClass} w-full overflow-hidden rounded-2xl bg-white shadow-xs border border-emerald-950/5`}>
+        <img
+          src={foto.src}
+          alt={foto.caption}
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-102"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      {/* Caption Faktual di Bawah Foto (Teks Gelap Solid, Tidak Menumpuk Foto) */}
+      <figcaption className="text-sm font-medium text-neutral-800 mt-3 leading-relaxed">
+        {foto.caption}
+      </figcaption>
+    </figure>
+  )
+}
 
 export default function Galeri() {
+  const [fotoUtama, ...fotoPendukung] = fotoGaleri
+
   return (
     <section id="galeri" className="bg-[#F3F8F4] py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,27 +42,23 @@ export default function Galeri() {
           </p>
         </div>
 
-        {/* Grid 3 Kolom Galeri Bersih */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-          {fotoGaleri.map((foto) => (
-            <div key={foto.id} className="flex flex-col">
-              {/* Bingkai Foto Rasio 4:3 Bersih */}
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white shadow-xs border border-emerald-950/5">
-                <img
-                  src={foto.src}
-                  alt={foto.caption}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-102"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-
-              {/* Caption Faktual di Bawah Foto (Teks Gelap Solid, Tidak Menumpuk Foto) */}
-              <p className="text-sm font-medium text-neutral-800 mt-3 leading-relaxed">
-                {foto.caption}
-              </p>
+        {/* Grid Asimetris: 1 Foto Utama (7 Kolom) + 2 Foto Pendukung (5 Kolom) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start">
+          {fotoUtama && (
+            <div className="md:col-span-7">
+              <GaleriItem foto={fotoUtama} aspectClass="aspect-[4/3]" />
             </div>
-          ))}
+          )}
+
+          <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6 sm:gap-8">
+            {fotoPendukung.map((foto) => (
+              <GaleriItem
+                key={foto.id}
+                foto={foto}
+                aspectClass="aspect-[4/3] md:aspect-[16/9]"
+              />
+            ))}
+          </div>
         </div>
 
       </div>

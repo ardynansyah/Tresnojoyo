@@ -1,17 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { lapakInfo, getWaLink, getTelLink } from '../data/lapakData'
 
 export default function LokasiKontak() {
   const [sudahSalin, setSudahSalin] = useState(false)
+  const salinTimerRef = useRef(null)
 
-  const handleSalinPatokan = () => {
+  useEffect(() => {
+    return () => {
+      if (salinTimerRef.current) {
+        clearTimeout(salinTimerRef.current)
+      }
+    }
+  }, [])
+
+  const handleSalinPatokan = async () => {
     const teksSalin = `${lapakInfo.namaLapak} (${lapakInfo.namaPemilik})\nAlamat: ${lapakInfo.alamatLengkap}\nPatokan: ${lapakInfo.patokanLokasi}\nKontak: ${lapakInfo.nomorTampil}`
-    
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard.writeText(teksSalin).then(() => {
-        setSudahSalin(true)
-        setTimeout(() => setSudahSalin(false), 2000)
-      })
+
+    if (!navigator?.clipboard?.writeText) return
+
+    try {
+      await navigator.clipboard.writeText(teksSalin)
+      setSudahSalin(true)
+      if (salinTimerRef.current) {
+        clearTimeout(salinTimerRef.current)
+      }
+      salinTimerRef.current = setTimeout(() => setSudahSalin(false), 2000)
+    } catch {
+      // Abaikan jika izin clipboard ditolak browser
     }
   }
 
@@ -55,13 +70,13 @@ export default function LokasiKontak() {
                   </p>
                 </div>
 
-                {/* 2 Tombol Utilitas Praktis untuk Supir & Pembeli */}
-                <div className="flex flex-wrap gap-2.5 pt-1">
+                {/* 2 Tombol Utilitas Praktis untuk Supir & Pembeli (Area Sentuh >= 44px) */}
+                <div className="flex flex-wrap gap-3 pt-1">
                   <a
                     href={lapakInfo.googleMapsDirectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold px-4 py-2 border border-white/20 transition-colors shadow-xs"
+                    className="min-h-[44px] inline-flex items-center justify-center rounded-full bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 border border-white/35 transition-colors shadow-xs"
                   >
                     Buka di Google Maps
                   </a>
@@ -69,7 +84,7 @@ export default function LokasiKontak() {
                   <button
                     type="button"
                     onClick={handleSalinPatokan}
-                    className="inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold px-4 py-2 border border-white/20 transition-colors cursor-pointer shadow-xs"
+                    className="min-h-[44px] inline-flex items-center justify-center rounded-full bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 border border-white/35 transition-colors cursor-pointer shadow-xs"
                   >
                     {sudahSalin ? 'Patokan Tersalin ✓' : 'Salin Patokan Lokasi'}
                   </button>
@@ -105,14 +120,14 @@ export default function LokasiKontak() {
                 href={getWaLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-[#00AA13] hover:bg-[#009210] text-white font-bold px-7 py-3.5 transition-colors shadow-sm text-center"
+                className="min-h-[48px] inline-flex items-center justify-center rounded-full bg-[#00AA13] hover:bg-[#009210] text-white font-bold px-7 py-3.5 transition-colors shadow-sm text-center"
               >
                 Chat WhatsApp
               </a>
 
               <a
                 href={getTelLink()}
-                className="rounded-full border border-white/25 hover:border-white hover:bg-white/10 text-white font-semibold px-7 py-3.5 transition-all text-center"
+                className="min-h-[48px] inline-flex items-center justify-center rounded-full border border-white/45 bg-white/10 hover:border-white hover:bg-white/20 text-white font-semibold px-7 py-3.5 transition-all text-center"
               >
                 Telepon Langsung
               </a>
